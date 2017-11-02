@@ -1,6 +1,7 @@
 package TASK_01;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Роман on 02.11.2017.
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 public class Dock {
     private int boxCount;
     private String dockN;
-    private ArrayList<Box> boxes = new ArrayList<Box>();
+    private List<Box> boxes = new ArrayList<Box>();
 
     public Dock(String dockN) {
         this.dockN = dockN;
