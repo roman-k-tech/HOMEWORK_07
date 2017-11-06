@@ -42,10 +42,12 @@ public class Main {
                 writeThread.shutdown();
             }
         }
-        catch (TimeoutException e) {e.printStackTrace();}
-        finally {
+        catch (TimeoutException e) {
+            e.printStackTrace();
             readThread.shutdownNow();
             writeThread.shutdownNow();
+        }
+        finally {
             fIS.close();
             fOS.close();
             return;

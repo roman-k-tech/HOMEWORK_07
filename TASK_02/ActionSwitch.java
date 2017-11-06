@@ -23,13 +23,14 @@ public class ActionSwitch {
     public synchronized byte[] getbuffer() throws InterruptedException {
         if (turn == false) {
             wait(); }
-        turn = false;
 
-        notifyAll();
         return buffer;
     }
 
     public synchronized int getbyteread() {
+        turn = false;
+        notifyAll();
+
         return byteread;
     }
 
@@ -37,7 +38,11 @@ public class ActionSwitch {
         return stop;
     }
 
-    public void setStop(boolean stop) {
+    public void setStop(boolean stop) throws InterruptedException {
         this.stop = stop;
+//        Thread.sleep(100);
+        if (this.stop == true) {
+            notifyAll();
+        }
     }
 }

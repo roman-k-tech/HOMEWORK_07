@@ -25,7 +25,7 @@ public class WriteBlock implements Callable<Boolean> {
             this.buffer = actionSwitch.getbuffer();
             this.byteread = actionSwitch.getbyteread();
             fOS.write(buffer, 0, byteread);
-            System.out.println(i++ + "K copied");
+            System.out.println(++i + "K copied");
         }
         while (actionSwitch.isStop() == false);
 
